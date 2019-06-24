@@ -5,6 +5,7 @@ import zipfile
 import re
 import traceback
 
+
 def check_sub_id(ex_number):
     for fn in files:
         if -1 != fn.find(ex_number):
@@ -30,12 +31,16 @@ def check_exfiles(file_name):
         err_std.append(id[0])
     return x
 
+
 path = ''
+
+
 def request_ex_folder():
     print("Input the path to the folder which has the uploaded ex files (ex:\"./uploaded\").")
     print("path : ", end='')
     global path
     path = input()
+
 
 def do_request():
     global files
@@ -48,8 +53,8 @@ def do_request():
         do_request()
         pass
 
-do_request()
 
+do_request()
 
 names = []
 submitted_fnames = {}
@@ -88,7 +93,7 @@ df.loc[df[c_name].isnull(), c_name] = 0
 date = datetime.date.today()
 
 f_name = "./std6_YenClass_" + str(date) + "_auto_created" ".xlsx"
-df.to_excel('.sheets/'+f_name, index=False)
+df.to_excel('.sheets/' + f_name, index=False)
 
 print("The new " + f_name + " file was created")
 
