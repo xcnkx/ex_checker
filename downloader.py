@@ -1,22 +1,15 @@
 import requests
-import csv
 import pandas as pd
-from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import ssl
 import os
 from tqdm import tqdm
 
 ssl._create_default_https_context = ssl._create_unverified_context
-from urllib.parse import urljoin
 
+USER = os.environ.get("WE_TSI_USER")
 
-
-# USER = os.environ.get("WE_USER")
-USER = "m5221102"
-
-# PASSWD = os.environ.get("WE_PASS")
-PASSWD = "WGfTgJ4l"
+PASSWD = os.environ.get("WE_TSI_PASSWD")
 
 import argparse  # 1. argparseをインポート
 
@@ -163,7 +156,7 @@ if __name__ == "__main__":
     res = c.login()
     # print(res.text)
     uploaded_html = c.get_uploaded_table()
-    print(uploaded_html)
+    # print(uploaded_html)
     files_id_df = c.get_files_id()
     df_list = pd.read_html(uploaded_html)
 
@@ -178,10 +171,13 @@ if __name__ == "__main__":
     # transform all letters to lowercase
     df_ = df.apply(lambda x: x.astype(str).str.lower())
 
-    df_target = df[df_[2].str.contains('ex' + str(args.ex[0]))]
+    df_target = df[df_.iloc[:, 2].str.contains('ex' + str(args.ex[0]))]
 
-    for index, student in df_target.iterrows():
-        c.download_file(student[2], student[3])
+    with tqdm(total=len(df_target)) as pbar:
+        for index, student in df_target.iterrows():
+            c.download_file(student[2], student[3])
+            pbar.update(1)
+
 
 
 
