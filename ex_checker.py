@@ -16,6 +16,7 @@ def check_sub_id(ex_number):
 def check_exfiles(file_name):
     id = file_name.split("_")
     x = []
+    print(path + '/' + file_name)
     with zipfile.ZipFile(path + '/' + file_name) as existing_zip:
         files_n = 0
         for name in existing_zip.namelist():
@@ -30,9 +31,6 @@ def check_exfiles(file_name):
     if files_n != p_n:
         err_std.append(id[0])
     return x
-
-
-path = ''
 
 
 def request_ex_folder():
@@ -81,7 +79,7 @@ print("Sheet date: ", end='')
 
 sheet_name = "std6_YenClass_" + input() + ".xlsx"
 
-df = pd.read_excel(sheet_name)
+df = pd.read_excel("./sheets/"+sheet_name)
 
 for i in submitted_fnames.values():
     sub_id = check_exfiles(i)

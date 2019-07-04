@@ -22,7 +22,8 @@ parser.add_argument('-p', '--proxy', type=int, default=0)
 
 args = parser.parse_args()  # 4. 引数を解析
 
-DOWNLOAD_SAVE_DIR = '/Users/Cris/Documents/WE_TA/2019/submissions/' + 'ex' +str(args.ex[0])
+DOWNLOAD_SAVE_DIR = '/Users/Cris/Documents/WE_TA/2019/submissions/' + 'ex' + str(args.ex[0])
+
 
 class crawler():
     # メールアドレスとパスワードの指定
@@ -125,7 +126,7 @@ class crawler():
     def download_file(self, file_name, file_id):
         """URL を指定してカレントディレクトリにファイルをダウンロードする
         """
-        url = "http://cseng.u-aizu.ac.jp:4080/WE19STD6/tsi/" #+ file_name
+        url = "http://cseng.u-aizu.ac.jp:4080/WE19STD6/tsi/"  # + file_name
         download_info = {
             "file": file_id,
             "id": self._USER,
@@ -135,11 +136,11 @@ class crawler():
 
         if args.proxy != 0:
             res_ = self.session.post(
-                url, data=download_info, proxies=self._proxies)
+                url, data=download_info, proxies=self._proxies, stream=True)
             res_.raise_for_status()  # エラーならここで例外を発生させる
         else:
             res_ = self.session.post(
-                url, data=download_info)
+                url, data=download_info, stream=True)
             res_.raise_for_status()  # エラーならここで例外を発生させる
 
         # save_file_name = url.split('/')[-1]
@@ -175,9 +176,5 @@ if __name__ == "__main__":
 
     with tqdm(total=len(df_target)) as pbar:
         for index, student in df_target.iterrows():
-            c.download_file(student[2], student[3])
+            c.download_file(student[0] + "_" + student[2], student[3])
             pbar.update(1)
-
-
-
-
