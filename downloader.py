@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import ssl
 import os
 from tqdm import tqdm
+import io
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -147,8 +148,8 @@ class crawler():
 
         save_file_path = os.path.join(DOWNLOAD_SAVE_DIR, file_name)
 
-        with open(save_file_path, 'wb') as saveFile:
-            saveFile.write(res_.content)
+        with open(save_file_path, 'wb') as code:
+            code.write(res_.content)
 
 
 if __name__ == "__main__":

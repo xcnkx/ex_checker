@@ -1,0 +1,34 @@
+ID	Name	L.1: 06.15	Ex 1: Att	Ex. 1: Sub	L.2: 06.19	Ex 2: Att	Ex. 2: Sub	L.3: 06.22	Ex 3: Att	Ex. 3: Sub	L.4: 06.26	Ex 4: Att	Ex. 4: Sub	L.5: 06.29	Ex 5: Att	Ex. 5: Sub	L.6: 07.03	Ex 6: Att	Ex. 6: Sub	L.7: 07.06	Ex 7: Att	Ex. 7: Sub	L.8: 07.10	Ex 8: Att	Ex. 8: Sub	L.9: 07.13	Ex 9: Att	Ex. 9: Sub	L.10: 07.17	Ex 10: Att	Ex. 10: Sub	L.11: 07.20	Ex 11: Att	Ex. 11: Sub	L.12: 07.24	Ex 12: Att	Ex. 12: Sub	L.13: 07.27	Ex 13: Att	Ex. 13: Sub	L.14:07.31	Final Exam	AtteScore	QScore	ExScore	Final Grade
+neilyyen	Yen Neil Yuwen	0	0	0	0	0	0	0	0	0	0	0	0				0																										0	0	0	
+m5221102	TA.Cristian Naoki Kamia	0	0	1	0	0	0	1	0	1	0	1	1				1																										0	1	0	
+s1240239	SA.Kaori Yuda	0	0	1	0	0	0	1	1	1	1	1	1				0																										0	0	0	
+s1220059	Yoshinori Fujii	0	1	0	0	1	0	1	1	1	1	1	1				1																										2	1	0	
+s1220106	Yudai Abe	0	1	1	0	1	0	0	1	1	1	1	0				1																										2	0	0	
+s1220187	Kohei Igarashi	0	1	0	0	1	0	0	0	0	0	0	0				0																										2	0	0	
+s1230004	Yuki Ito	0	1	1	0	1	0	0.1	1	0	0	0	0				0																										2	0.1	0	
+s1230171	Yutaka Kiji	0	1	0	0	1	0	0	0	0	0	0	0				0																										2	0	0	
+s1230218	Yuji Takebuchi	0	1	1	0	1	1	0	1	1	0	0	1				0																										2	0	0	
+s1230233	Tomoki Kiyono	0	1	0	0	1	0	0	0	0	0	0	0				0																										2	0	0	
+s1240015	Takuya Nagamine	0	1	0	0	1	0	0	0	0	0	0	0				0																										2	0	0	
+s1240133	Yoshiki Tokumitsu	0	1	1	0	1	0	0.1	1	0	0	0	0				0																										2	0.1	0	
+s1250005	Yoshiki Otsuka	0	1	1	0	1	1	1	1	1	1	1	0				1																										2	1	0	
+s1250009	Hiroto Saito	0	1	1	0	1	0	0	0	1	1	1	1				1																										2	0	0	
+s1250029	Yuhi Matsuo	0	1	1	0	1	1	1	1	1	1	1	1				1																										2	1	0	
+s1250040	Kazuki Mori	0	1	1	0	1	0	1	1	1	1	1	1				1																										2	1	0	
+s1250048	Noritaka Kagei	0	1	1	0	1	1	0	0	1	1	1	1				1																										2	0	0	
+s1250055	Jun Takahashi	0	1	0	0	1	0	0	1	0	0	0	0				1																										2	0	0	
+s1250072	Hiroshi Sakai	0	1	1	0	1	0	0	0	0	0	0	0				0																										2	0	0	
+s1250083	Yuki Yamada	0	1	1	0	1	0	0	0	1	1	1	1				1																										2	0	0	
+s1250087	Shuji Oba	0	1	1	0	1	1	0	0	0	1	1	1				1																										2	0	0	
+s1250096	Makoto Takeuchi	0	1	1	0	1	0	1	1	1	1	1	1				1																										2	1	0	
+s1250102	Yoshiyuki Minamisawa	0	1	1	0	1	1	1	1	1	1	1	1				1																										2	1	0	
+s1250111	Shun Kinemuchi	0	1	1	0	1	1	1	1	1	1	1	1				1																										2	1	0	
+s1250112	Daiya Komae	0	1	0	0	1	1	1	1	1	0	1	1				0																										2	1	0	
+s1250116	Keisuke Takemura	0	1	0	0	1	0	0.1	1	1	0	0	1				0																										2	0.1	0	
+s1250125	Takahisa Watanabe	0	1	0	0	1	0	1	1	1	0	1	1				0																										2	1	0	
+s1250126	Teppei Abe	0	1	0	0	1	0	0	0	0	0	0	0				0																										2	0	0	
+s1250127	Ryoya Ito	0	1	1	0	1	1	0	0	1	1	1	1				0																										2	0	0	
+s1250141	Masataka Hida	0	1	1	0	1	1	0.1	1	1	1	1	1				0.5																										2	0.1	0	
+s1250145	Mizuho Yamaguchi	0	1	1	0	1	0	0.1	1	1	1	1	1				1																										2	0.1	0	
+s1250168	Naoto Inazawa	0	1	1	0	1	1	0.1	1	1	1	1	1				0																										2	0.1	0	
+s1250183	Yuki Homma	0	1	1	0	1	0	1	1	1	1	1	1				1																										2	1	0	
