@@ -3,7 +3,6 @@ import os
 import datetime
 import zipfile
 import re
-import traceback
 
 
 def check_sub_id(ex_number):
@@ -15,45 +14,38 @@ def check_sub_id(ex_number):
 
 def check_exfiles(file_name):
     id = file_name.split("_")
+    count_dots = file_name.count(".")
+    if count_dots != 1:
+        return -1
     x = []
-    print(path + '/' + file_name)
-    with zipfile.ZipFile(path + '/' + file_name) as existing_zip:
-        files_n = 0
-        for name in existing_zip.namelist():
-            m = re.findall(r'ex[0-9]*/p[0-9]*/\w*.pdf$', str(name).lower())
-            # m = re.findall(r"ex[0-9]*/\w*.pdf$", str(.name).lower())
+    try:
+        with zipfile.ZipFile(path + '/' + file_name) as existing_zip:
+            files_n = 0
+            for name in existing_zip.namelist():
+                m = re.findall(r'ex[0-9]*/p[0-9]*/\w*.pdf$', str(name).lower())
+                # m = re.findall(r"ex[0-9]*/\w*.pdf$", str(name).lower())
 
-            if m:
-                files_n += 1
-        x.append(files_n)
+                if m:
+                    files_n += 1
 
-    x.append(id[0])
-    if files_n != p_n:
-        err_std.append(id[0])
+            x.append(files_n)
+
+            x.append(id[0])
+            if files_n != p_n:
+                err_std.append(id[0])
+
+    except zipfile.BadZipfile:
+        print("[Error] Badzip file error in :" + file_name)
+        pass
+
     return x
 
 
-def request_ex_folder():
-    print("Input the path to the folder which has the uploaded ex files (ex:\"./uploaded\").")
-    print("path : ", end='')
-    global path
-    path = input()
+print("Input the path to the folder which has the uploaded ex files (ex:\"./uploaded\").")
+print("path : ", end='')
+path = input()
 
-
-def do_request():
-    global files
-    try:
-        request_ex_folder()
-        files = os.listdir(path)
-    except:
-        traceback.print_exc()
-        print('\n')
-        do_request()
-        pass
-
-
-do_request()
-
+files = os.listdir(path)
 names = []
 submitted_fnames = {}
 ids = []
@@ -79,10 +71,14 @@ print("Sheet date: ", end='')
 
 sheet_name = "std6_YenClass_" + input() + ".xlsx"
 
-df = pd.read_excel("./sheets/"+sheet_name)
+df = pd.read_excel(sheet_name)
 
 for i in submitted_fnames.values():
     sub_id = check_exfiles(i)
+    if sub_id == -1:
+        continue
+    elif len(sub_id) < 1:
+        continue
     score = sub_id[0] / p_n
     df.loc[df['ID'] == sub_id[1], c_name] = score
 
@@ -91,13 +87,13 @@ df.loc[df[c_name].isnull(), c_name] = 0
 date = datetime.date.today()
 
 f_name = "./std6_YenClass_" + str(date) + "_auto_created" ".xlsx"
-df.to_excel('.sheets/' + f_name, index=False)
+df.to_excel(f_name, index=False)
 
 print("The new " + f_name + " file was created")
 
-print("Number of Students which has submitted this exercise:" + str(len(submitted_fnames)))
-
 print("Students that may be checked:")
+
+err_std.sort()
 
 for j in err_std:
     print("Student ID: " + j)
